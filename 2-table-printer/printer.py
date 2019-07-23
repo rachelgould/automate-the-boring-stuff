@@ -17,6 +17,7 @@ def get_header_row():
 def get_number():
   while True:
     num = input()
+    num = int(num)
     if isinstance(num, int) and num != 0:
       break
     else:
