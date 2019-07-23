@@ -4,3 +4,5 @@ Python practice projects from "Automate the Boring Stuff With Python" by Al Swei
 ## Password Locker
 
 Simple, insecure password manager.
+
+[Code Here](/1-password-locker)
