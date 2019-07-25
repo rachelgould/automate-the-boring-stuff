@@ -50,7 +50,7 @@ print('How many rows would you like to make?')
 rows = get_number()
 
 if header:
-  print('Please paste in the header row, which each column separated by a comma')
+  print('Please paste in the header row, with each column separated by a comma')
   header_contents = get_header_row_contents()
   print('These are the header contents: ', header_contents)
 
