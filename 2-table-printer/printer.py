@@ -37,13 +37,11 @@ def calc_widest_value(header=False, header_contents=[], body_contents=[]):
 def get_number():
   while True:
     num = input()
-    # ERROR here if the user puts in something like a string
-    num = int(num)
-    if isinstance(num, int) and num != 0:
+    if num.isdigit() and num != '0':
       break
     else:
       print('Please provide a whole number greater than 0.')
-  return num
+  return int(num)
 
 header_contents=[]
 
@@ -62,7 +60,6 @@ rows = get_number()
 if header:
   print('Please paste in the header row, with each value separated by a comma')
   header_contents = get_header_row_contents()
-  print('These are the header contents: ', header_contents)
 
 print('Please paste in the table contents, with each value separated by a comma')
 body_contents = get_row_contents()
@@ -84,5 +81,6 @@ concatenated_body_contents = '|'
 for index, value in enumerate(body_contents):
   cell = value.center(widest_value)
   concatenated_body_contents = concatenated_body_contents + cell + '|'
-  if (index + 1) % columns == 0:
-    concatenated_body_contents = concatenated_body_contents + '\n' + ('-' * columns * (widest_value + 1))
+  if (index + 1) % columns == 0 and index != len(body_contents) - 1:
+    concatenated_body_contents = concatenated_body_contents + '\n' + ('-' * columns * (widest_value + 1)) + '\n' + '|'
+print(concatenated_body_contents)
